@@ -17,7 +17,7 @@ variables:
   tag: '$(Build.BuildId)'
 
   # Polr
-  DB_DATABASE: polr_production
+  DB_DATABASE: 
 
   ADMIN_USERNAME: admin
   ADMIN_EMAIL: raphox.araujo@gmail.com
@@ -49,6 +49,19 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+    - task: AzureMysqlDeployment@1
+      displayName: Create database if not exists
+      inputs:
+        azureSubscription: 'Free Trial(e3666e30-ade9-4616-bf86-3ef5e2e33d0f)'
+        ServerName: $(DB_HOST)
+        DatabaseName: $(DB_DATABASE)
+        SqlUsername: $(DB_USERNAME)
+        SqlPassword: $(DB_PASSWORD)
+        TaskNameSelector: 'InlineSqlTask'
+        SqlInline: |
+          CREATE DATABASE IF NOT EXISTS $(DB_DATABASE);
+          USE $(DB_DATABASE);
+        IpDetectionMethod: 'AutoDetect'
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
