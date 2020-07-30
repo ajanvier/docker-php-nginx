@@ -15,6 +15,27 @@ variables:
   containerRegistry: 'vivace.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
+
+  # Polr
+  DB_DATABASE: polr_production
+
+  ADMIN_USERNAME: admin
+  ADMIN_EMAIL: raphox.araujo@gmail.com
+
+  APP_NAME: 'C2S Shorturl'
+  APP_PROTOCOL: 'http://'
+  APP_ADDRESS: 'localhost:8080'
+
+  POLR_ALLOW_ACCT_CREATION: true
+  POLR_ACCT_ACTIVATION: false
+  POLR_ACCT_CREATION_RECAPTCHA: false
+  POLR_BASE: 32
+
+  SETTING_PUBLIC_INTERFACE: false
+  SETTING_SHORTEN_PERMISSION: false
+  SETTING_AUTO_API: true
+  SETTING_PSEUDORANDOM_ENDING: true
+  SETTING_ADV_ANALYTICS: true
   
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
