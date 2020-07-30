@@ -23,6 +23,7 @@ variables:
   DB_PASSWORD: $(DB_PASSWORD)
 
   ADMIN_USERNAME: admin
+  ADMIN_PASSWORD: $(ADMIN_PASSWORD)
   ADMIN_EMAIL: raphox.araujo@gmail.com
 
   APP_NAME: 'C2S Shorturl'
