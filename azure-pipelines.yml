@@ -47,17 +47,10 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-    - task: AzureMysqlDeployment@1
-      inputs:
-        azureSubscription: 'Free Trial(e3666e30-ade9-4616-bf86-3ef5e2e33d0f)'
-        ServerName: 'vivace-team.mysql.database.azure.com'
-        DatabaseName: '$(DB_DATABASE)'
-        SqlUsername: '$(DB_USERNAME)'
-        SqlPassword: '$(DB_PASSWORD)'
-        IpDetectionMethod: 'AutoDetect'
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
+        azureSubscription: 'Free Trial(e3666e30-ade9-4616-bf86-3ef5e2e33d0f)'
         command: buildAndPush
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
