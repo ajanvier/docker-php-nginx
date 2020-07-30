@@ -17,13 +17,7 @@ variables:
   tag: '$(Build.BuildId)'
 
   # Polr
-  DB_HOST: $(DB_HOST)
-  DB_DATABASE: $(DB_DATABASE)
-  DB_USERNAME: $(DB_USERNAME)
-  DB_PASSWORD: $(DB_PASSWORD)
-
   ADMIN_USERNAME: admin
-  ADMIN_PASSWORD: $(ADMIN_PASSWORD)
   ADMIN_EMAIL: raphox.araujo@gmail.com
 
   APP_NAME: 'C2S Shorturl'
