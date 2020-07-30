@@ -54,7 +54,6 @@ stages:
         DatabaseName: '$(DB_DATABASE)'
         SqlUsername: '$(DB_USERNAME)'
         SqlPassword: '$(DB_PASSWORD)'
-        TaskNameSelector: 'SqlTaskFile'
         IpDetectionMethod: 'AutoDetect'
     - task: Docker@2
       displayName: Build and push an image to container registry
