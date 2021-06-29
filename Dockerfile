@@ -7,6 +7,7 @@ LABEL Maintainer="Aurélien JANVIER <dev@ajanvier.fr>" \
 # Environment variables
 ENV APP_NAME My Polr
 ENV APP_PROTOCOL https://
+ENV DB_CONNECTION mysql
 ENV DB_PORT 3306
 ENV DB_DATABASE polr
 ENV DB_USERNAME polr
@@ -15,7 +16,7 @@ ENV POLR_BASE 62
 # Install packages and remove default server definition
 RUN apk --no-cache add bash git php7 php7-fpm php7-opcache php7-mysqli php7-json php7-openssl php7-curl \
         php7-zlib php7-xml php-xmlwriter php7-phar php7-intl php7-dom php7-xmlreader php7-ctype php7-session \
-        php7-mbstring php7-gd php7-pdo php7-pdo_mysql php7-tokenizer nginx supervisor curl && \
+        php7-mbstring php7-gd php7-pdo php7-pdo_mysql php7-pdo_sqlite php7-tokenizer nginx supervisor curl && \
     apk add --update libintl && \
     apk add --virtual build_deps gettext &&  \
     cp /usr/bin/envsubst /usr/local/bin/envsubst && \

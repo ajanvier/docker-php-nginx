@@ -29,9 +29,10 @@ Environment variables
 -----
 | Name | Description |
 |--|--|
+| DB_CONNECTION | Type of database *(default: mysql)* |
 | DB_HOST | **(required)** Host of the MySQL server |
 | DB_PORT | Port of the MySQL server *(default: 3306)* |
-| DB_DATABASE | Name of the MySQL database *(default: polr)* |
+| DB_DATABASE | Name of the MySQL database *(default: polr)*, or path of sqlite file |
 | DB_USERNAME | Name of the MySQL user *(default: polr)* |
 | DB_PASSWORD | **(required)** Password of the MySQL user |
 |  |  |
