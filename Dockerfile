@@ -19,7 +19,7 @@ RUN apk --no-cache add bash git php7 php7-fpm php7-opcache php7-mysqli php7-json
     apk add --update libintl && \
     apk add --virtual build_deps gettext &&  \
     cp /usr/bin/envsubst /usr/local/bin/envsubst && \
-    rm /etc/nginx/conf.d/default.conf
+    rm -f /etc/nginx/conf.d/default.conf
 
 # Configure nginx
 COPY config/nginx.conf /etc/nginx/nginx.conf
